@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+node_modules/
+*.log
+
+# Rendered page-by-page previews used only during writeup review
+page-*.jpg
+final-*.jpg
+final2-*.jpg
+checkpage-*.jpg
+title_check-*.jpg

@@ -1,0 +1,62 @@
+{
+  "breast_cancer": {
+    "n_features": 30,
+    "n_classes": 2,
+    "tau": 0.2,
+    "delta": 10.0,
+    "standard_acc_mean": 0.9362573099415205,
+    "standard_acc_std": 0.015571376556367658,
+    "adaptive_acc_mean": 0.9385964912280702,
+    "adaptive_acc_std": 0.014144311839120257,
+    "standard_evals_mean": 30.0,
+    "adaptive_evals_mean": 6.33859649122807,
+    "adaptive_evals_std": 0.3910567024747944,
+    "speedup_mean": 4.732908939939109,
+    "acc_delta_mean": 0.002339181286549752
+  },
+  "wine": {
+    "n_features": 13,
+    "n_classes": 3,
+    "tau": 0.0,
+    "delta": 10.0,
+    "standard_acc_mean": 0.9740740740740741,
+    "standard_acc_std": 0.009072184232530329,
+    "adaptive_acc_mean": 0.9740740740740741,
+    "adaptive_acc_std": 0.009072184232530329,
+    "standard_evals_mean": 13.0,
+    "adaptive_evals_mean": 6.9907407407407405,
+    "adaptive_evals_std": 0.5470490733147625,
+    "speedup_mean": 1.8596026490066226,
+    "acc_delta_mean": 0.0
+  },
+  "digits": {
+    "n_features": 64,
+    "n_classes": 10,
+    "tau": 0.0,
+    "delta": 5.0,
+    "standard_acc_mean": 0.8027777777777778,
+    "standard_acc_std": 0.018111262591201705,
+    "adaptive_acc_mean": 0.8629629629629629,
+    "adaptive_acc_std": 0.014814814814814819,
+    "standard_evals_mean": 64.0,
+    "adaptive_evals_mean": 11.96111111111111,
+    "adaptive_evals_std": 0.24679148215709346,
+    "speedup_mean": 5.350673478866698,
+    "acc_delta_mean": 0.06018518518518512
+  },
+  "synthetic_100f_4c": {
+    "n_features": 100,
+    "n_classes": 4,
+    "tau": 0.0,
+    "delta": 5.0,
+    "standard_acc_mean": 0.7184999999999999,
+    "standard_acc_std": 0.011994211566881373,
+    "adaptive_acc_mean": 0.71775,
+    "adaptive_acc_std": 0.012202288036812324,
+    "standard_evals_mean": 100.0,
+    "adaptive_evals_mean": 78.64408333333334,
+    "adaptive_evals_std": 1.0875495167526363,
+    "speedup_mean": 1.2715514729334374,
+    "acc_delta_mean": -0.0007499999999999174
+  }
+}
