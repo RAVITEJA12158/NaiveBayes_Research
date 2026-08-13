@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.13140/RG.2.2.23508.97921.svg)](https://doi.org/10.13140/RG.2.2.23508.97921)
 # Adaptive Evidence-Weighted Early-Exit Naive Bayes (AEWEE-NB)
 
 **Author:** Tollamadugu Siva Naga Venkata Raviteja
