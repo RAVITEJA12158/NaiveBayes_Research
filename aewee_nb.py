@@ -158,3 +158,100 @@ class AdaptiveEvidenceWeightedEarlyExitNB:
             evals.append(e)
             skips.append(s)
         return np.array(preds), np.array(evals), np.array(skips)
+
+
+def diagnostic_scan(fitted_model, X):
+    """
+    Inspect the REAL distribution of w_i (per-sample discriminative weight)
+    and incremental score-gaps that this trained model actually produces on
+    real data, by running it with thresholding and early-exit both switched
+    off (so every feature is seen and nothing is skipped) and logging every
+    intermediate value. This is the step that was described but NOT actually
+    implemented before picking the (tau, delta) grids used in the paper's
+    original experiments -- it's what lets you anchor the grid to the data's
+    real scale instead of guessing round numbers.
+
+    Returns
+    -------
+    w_values    : 1D array of every w_i observed, across all samples & features
+    gap_values  : 1D array of every incremental leader-vs-runner-up gap
+                  observed after each feature is added, across all samples
+    """
+    w_values = []
+    gap_values = []
+    C = len(fitted_model.classes_)
+    for x in X:
+        scores = np.log(fitted_model.class_prior_).copy()
+        for i in fitted_model.feature_order_:
+            log_dens = fitted_model._log_gauss_all_classes(x[i], i)
+            w_values.append(np.var(log_dens))
+            scores = scores + log_dens
+            sorted_scores = np.sort(scores)[::-1]
+            gap_values.append(sorted_scores[0] - sorted_scores[1])
+    return np.array(w_values), np.array(gap_values)
+
+
+def data_driven_grid(w_values, gap_values,
+                      tau_percentiles=(0, 25, 50, 75, 90),
+                      delta_percentiles=(10, 25, 50, 75)):
+    """
+    Turn the observed w_i / gap distributions into a candidate grid, anchored
+    to percentiles of what this specific dataset actually produces, instead
+    of a fixed, dataset-agnostic list of round numbers.
+    """
+    tau_candidates = sorted(set(
+        [0.0] + [round(float(np.percentile(w_values, p)), 4) for p in tau_percentiles]
+    ))
+    delta_candidates = sorted(set(
+        [round(float(np.percentile(gap_values, p)), 2) for p in delta_percentiles]
+    ))
+    return tau_candidates, delta_candidates
+
+
+class StaticTopKNB:
+    """The dead-simple baseline: rank features once at training time (same
+    Fisher-score ranking used for AEWEE-NB's ordering), keep a FIXED top-k
+    subset for every test sample, no adaptivity, no early-exit, no threshold.
+    If this matches AEWEE-NB's accuracy at the same average feature budget,
+    the adaptive machinery isn't earning its complexity."""
+
+    def __init__(self, k):
+        self.k = k
+
+    def fit(self, X, y, var_smoothing=1e-9):
+        self.classes_ = np.unique(y)
+        n_features = X.shape[1]
+        C = len(self.classes_)
+        self.theta_ = np.zeros((C, n_features))
+        self.var_ = np.zeros((C, n_features))
+        self.class_prior_ = np.zeros(C)
+        eps = var_smoothing * X.var(axis=0).max()
+        for idx, c in enumerate(self.classes_):
+            Xc = X[y == c]
+            self.theta_[idx] = Xc.mean(axis=0)
+            self.var_[idx] = Xc.var(axis=0) + eps
+            self.class_prior_[idx] = Xc.shape[0] / X.shape[0]
+
+        mean_var_across_classes = np.var(self.theta_, axis=0)
+        avg_within_class_var = np.mean(self.var_, axis=0)
+        fisher_score = mean_var_across_classes / (avg_within_class_var + 1e-12)
+        order = np.argsort(-fisher_score)
+        self.selected_features_ = order[:self.k]
+        return self
+
+    def predict(self, X):
+        C = len(self.classes_)
+        idx = self.selected_features_
+        Xs = X[:, idx]
+        mu = self.theta_[:, idx]      # (C, k)
+        var = self.var_[:, idx]       # (C, k)
+        # vectorized over all samples at once
+        # log N(x_i; mu, var) summed over k features, for each class
+        scores = np.log(self.class_prior_)[None, :].repeat(len(X), axis=0)  # (N, C)
+        for c in range(C):
+            diff = Xs - mu[c][None, :]
+            log_dens = -0.5 * np.log(2 * np.pi * var[c])[None, :] - 0.5 * (diff ** 2) / var[c][None, :]
+            scores[:, c] += log_dens.sum(axis=1)
+        preds = self.classes_[np.argmax(scores, axis=1)]
+        evals = np.full(len(X), self.k)
+        return preds, evals

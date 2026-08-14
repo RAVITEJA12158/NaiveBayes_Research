@@ -1,4 +1,3 @@
-[![DOI](https://zenodo.org/badge/DOI/10.13140/RG.2.2.23508.97921.svg)](https://doi.org/10.13140/RG.2.2.23508.97921)
 # Adaptive Evidence-Weighted Early-Exit Naive Bayes (AEWEE-NB)
 
 **Author:** Tollamadugu Siva Naga Venkata Raviteja
@@ -16,16 +15,29 @@ matches or beats it. This repo has the full implementation, experiments, and wri
   accuracy loss (and a +6pp accuracy gain on one dataset).
 - **Larger scale (200–2,000 features, up to 50k samples):** benchmarked against the dead-simple
   alternative — a *fixed* top-k feature subset with zero adaptivity — and the adaptive method did **not**
-  beat it. The simple baseline matched or won on every dataset tested, including the high-dimensional
-  case closest to real-world Naive Bayes use (text classification).
-- Ablation study found the speedup comes almost entirely from the early-exit rule; the "smart" ordering
-  and thresholding pieces contribute no computation savings on their own — they just make early-exit
-  safer to use aggressively.
-- Caught and fixed a real bug in my own evaluation harness along the way (the baseline was being
-  under-counted by a factor of the number of classes, which manufactured a fake speedup). Documented in
-  the paper rather than swept under the rug.
+  clearly beat it under the original hyperparameter-selection process.
+- **Then found and fixed two real bugs in that selection process itself:** (1) the safety check let
+  *noisier* hyperparameter candidates through *more* easily instead of less, and (2) when no candidate
+  could be certified safe, the fallback silently picked the most aggressive untested option instead of
+  the safest one.
+- **An external review then caught a third, subtler issue:** the candidate grid itself was generated
+  from the full training set *before* it was split into cross-validation folds — a mild form of grid
+  leakage across folds (not test-set leakage, but not clean nested CV either). Fixed by generating the
+  grid strictly from each fold's inner-training data and evaluating only on that fold's untouched
+  outer validation split — proper nested cross-validation.
+- **Final, methodologically clean comparison against static top-k** (see
+  `nested_cv_final_comparison_vs_statictopk.json`): AEWEE-NB wins on Wine and Digits, static top-k
+  wins on the large diffuse-signal dataset, and it's a tie on Breast Cancer. A genuine mixed result,
+  not a clean win or a clean loss either way — and the win/loss pattern is driven mainly by whether the
+  safety-aware selection process can certify an aggressive configuration, not by the adaptive-inference
+  machinery being inherently cheaper.
+- Ablation study found the raw speedup comes almost entirely from the early-exit rule; the "smart"
+  ordering and thresholding pieces contribute no computation savings on their own — they just make
+  early-exit safer to use aggressively.
 
-**Read the full paper:** [`AEWEE_NB_Paper.docx`](./AEWEE_NB_Paper.docx) (also exported as PDF)
+**Read the full paper:** [`AEWEE_NB_Paper.docx`](./AEWEE_NB_Paper.docx) (also exported as PDF) — Section 7
+of the paper now documents all three corrections (data-driven grid, two selection bugs, and the nested-CV
+grid-leakage fix) with fully consistent final numbers throughout.
 
 ## Why this is here
 
@@ -39,12 +51,19 @@ large-scale results → the honest conclusion that a simpler approach currently 
 
 | File | What it is |
 |---|---|
-| `aewee_nb.py` | Core implementation: `StandardGaussianNB` (baseline), `AdaptiveEvidenceWeightedEarlyExitNB` (the proposed method, with ablation switches), `StaticTopKNB` (the simple baseline that ended up winning at scale) |
+| `aewee_nb.py` | Core implementation: `StandardGaussianNB` (baseline), `AdaptiveEvidenceWeightedEarlyExitNB` (the proposed method, with ablation switches), `StaticTopKNB` (the simple baseline), plus `diagnostic_scan`/`data_driven_grid` for data-driven hyperparameter grid selection |
 | `run_experiments.py` | Small/moderate-scale experiment grid (Wine, Breast Cancer, Digits, synthetic) |
 | `robustness_check.py` | 10-split repeated-random-split robustness check |
 | `large_scale_experiments.py` | Large synthetic-dataset experiments + static top-k comparison |
-| `results.json`, `robustness_results.json`, `large_scale_results.json` | Raw experiment output |
-| `AEWEE_NB_Paper.docx` / `.pdf` | Full writeup: method, related work, results, ablations, honest limitations |
+| `data_driven_grid_experiment.py` | First attempt at data-driven (τ, δ) grid selection using a single validation split — **superseded**, kept for the record; exposed the need for CV |
+| `cv_grid_experiment.py` | Second version: k-fold CV selection with a pessimistic safety margin — **superseded**, kept for the record; had a subtle grid-leakage issue caught by external review |
+| `nested_cv_experiment.py` | **Current/correct** version: proper nested CV — the (τ, δ) candidate grid is generated strictly from each fold's inner-training data, never the data it's evaluated against |
+| `results.json`, `robustness_results.json`, `large_scale_results.json` | Raw output from the original (paper) experiments |
+| `data_driven_grid_results.json`, `cv_grid_results_final.json` | Raw output from the superseded (non-nested) hyperparameter-selection experiments |
+| `nested_cv_results_small.json`, `nested_cv_results_large.json` | Raw output from the current, leakage-free nested CV experiments |
+| `final_comparison_vs_statictopk.json` | Superseded head-to-head vs. static top-k (pre-nested-CV) |
+| `nested_cv_final_comparison_vs_statictopk.json` | **Current** head-to-head vs. static top-k, using the leakage-free nested CV results |
+| `AEWEE_NB_Paper.docx` / `.pdf` | Full writeup: method, related work, results, ablations, all three selection-process corrections (Section 7), honest limitations |
 | `build_paper.js` | Script that generates the paper document from the results |
 
 ## Reproducing the results

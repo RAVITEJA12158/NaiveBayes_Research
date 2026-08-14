@@ -1,0 +1,33 @@
+[
+  {
+    "dataset": "large_diffuse_signal_subsampled",
+    "n_features": 500,
+    "n_classes": 8,
+    "n_folds": 3,
+    "tau_grid_tried": [
+      0.0,
+      0.0002,
+      0.0019,
+      0.0037,
+      0.0095,
+      0.0266
+    ],
+    "delta_grid_tried": [
+      0.2,
+      0.59,
+      1.52,
+      3.3
+    ],
+    "selected_tau": 0.0037,
+    "selected_delta": 3.3,
+    "selection_cv_accuracy": 0.33,
+    "selection_cv_std": 0.025581668606787244,
+    "selection_mode": "UNCERTIFIED (no candidate cleared the safety bar -- picked best available lower bound, not fastest)",
+    "standard_test_accuracy": 0.36444444444444446,
+    "standard_test_evals": 500.0,
+    "final_test_accuracy": 0.3522222222222222,
+    "final_test_evals": 403.29555555555555,
+    "final_test_delta_accuracy": -0.012222222222222245,
+    "final_speedup": 1.239785544651565
+  }
+]

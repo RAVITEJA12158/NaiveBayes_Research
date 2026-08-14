@@ -1,0 +1,93 @@
+[
+  {
+    "dataset": "breast_cancer",
+    "n_features": 30,
+    "n_classes": 2,
+    "n_folds": 5,
+    "tau_grid_tried": [
+      0.0,
+      0.0299,
+      0.2488,
+      1.1308,
+      4.1721
+    ],
+    "delta_grid_tried": [
+      5.3,
+      13.96,
+      27.68,
+      39.77
+    ],
+    "selected_tau": 0.0,
+    "selected_delta": 5.3,
+    "selection_cv_accuracy": 0.9471835443037975,
+    "selection_cv_std": 0.014851653885588553,
+    "selection_mode": "certified-safe (picked fastest among certified-safe candidates)",
+    "standard_test_accuracy": 0.935672514619883,
+    "standard_test_evals": 30.0,
+    "final_test_accuracy": 0.9122807017543859,
+    "final_test_evals": 3.8596491228070176,
+    "final_test_delta_accuracy": -0.023391812865497075,
+    "final_speedup": 7.7727272727272725
+  },
+  {
+    "dataset": "wine",
+    "n_features": 13,
+    "n_classes": 3,
+    "n_folds": 5,
+    "tau_grid_tried": [
+      0.0,
+      0.0008,
+      0.26,
+      1.4154,
+      7.7343,
+      30.8281
+    ],
+    "delta_grid_tried": [
+      1.8,
+      5.27,
+      11.64,
+      20.07
+    ],
+    "selected_tau": 0.0,
+    "selected_delta": 11.64,
+    "selection_cv_accuracy": 0.96,
+    "selection_cv_std": 0.050596442562694056,
+    "selection_mode": "UNCERTIFIED (no candidate cleared the safety bar -- picked best available lower bound, not fastest)",
+    "standard_test_accuracy": 1.0,
+    "standard_test_evals": 13.0,
+    "final_test_accuracy": 1.0,
+    "final_test_evals": 6.981481481481482,
+    "final_test_delta_accuracy": 0.0,
+    "final_speedup": 1.8620689655172413
+  },
+  {
+    "dataset": "digits",
+    "n_features": 64,
+    "n_classes": 10,
+    "n_folds": 5,
+    "tau_grid_tried": [
+      0.0,
+      0.9488,
+      9.735,
+      24.7704,
+      751.5986
+    ],
+    "delta_grid_tried": [
+      1.41,
+      5.21,
+      16.53,
+      43.11
+    ],
+    "selected_tau": 0.0,
+    "selected_delta": 5.21,
+    "selection_cv_accuracy": 0.858420287105546,
+    "selection_cv_std": 0.022946705402506887,
+    "selection_mode": "certified-safe (picked fastest among certified-safe candidates)",
+    "standard_test_accuracy": 0.7722222222222223,
+    "standard_test_evals": 64.0,
+    "final_test_accuracy": 0.8444444444444444,
+    "final_test_evals": 12.444444444444445,
+    "final_test_delta_accuracy": 0.07222222222222219,
+    "final_speedup": 5.142857142857142
+  }
+]

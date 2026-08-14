@@ -1,0 +1,306 @@
+[
+  {
+    "dataset": "large_concentrated_signal",
+    "description": "50k samples, 200 features, only 20 informative -- signal concentrated",
+    "n_features": 200,
+    "n_classes": 5,
+    "n_train": 35000,
+    "n_test": 15000,
+    "standard": {
+      "accuracy": 0.7243333333333334,
+      "avg_evals": 200.0,
+      "time_sec": 1.2332834249999962,
+      "n_eval_samples": 15000
+    },
+    "adaptive_grid": [
+      {
+        "tau": 0.0,
+        "delta": 3.0,
+        "accuracy": 0.714,
+        "avg_evals": 75.90733333333333,
+        "pct_evaluated": 37.95366666666666,
+        "time_sec": 7.269631060000009,
+        "n_eval_samples": 3000
+      },
+      {
+        "tau": 0.0,
+        "delta": 8.0,
+        "accuracy": 0.7183333333333334,
+        "avg_evals": 177.77966666666666,
+        "pct_evaluated": 88.88983333333333,
+        "time_sec": 16.25472222500001,
+        "n_eval_samples": 3000
+      },
+      {
+        "tau": 0.2,
+        "delta": 3.0,
+        "accuracy": 0.6686666666666666,
+        "avg_evals": 119.68066666666667,
+        "pct_evaluated": 59.84033333333333,
+        "time_sec": 9.498969716000005,
+        "n_eval_samples": 3000
+      },
+      {
+        "tau": 0.2,
+        "delta": 8.0,
+        "accuracy": 0.6716666666666666,
+        "avg_evals": 190.44866666666667,
+        "pct_evaluated": 95.22433333333333,
+        "time_sec": 14.622714994000006,
+        "n_eval_samples": 3000
+      }
+    ],
+    "static_topk_grid": [
+      {
+        "k": 10,
+        "accuracy": 0.5913333333333334,
+        "avg_evals": 10.0,
+        "pct_evaluated": 5.0,
+        "time_sec": 0.5389897450000092,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 20,
+        "accuracy": 0.677,
+        "avg_evals": 20.0,
+        "pct_evaluated": 10.0,
+        "time_sec": 0.10091839000000391,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 50,
+        "accuracy": 0.7186666666666667,
+        "avg_evals": 50.0,
+        "pct_evaluated": 25.0,
+        "time_sec": 0.1048337530000083,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 76,
+        "accuracy": 0.7186666666666667,
+        "avg_evals": 76.0,
+        "pct_evaluated": 38.0,
+        "time_sec": 0.10573597199999085,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 100,
+        "accuracy": 0.7166666666666667,
+        "avg_evals": 100.0,
+        "pct_evaluated": 50.0,
+        "time_sec": 0.10551659199998653,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 120,
+        "accuracy": 0.7176666666666667,
+        "avg_evals": 120.0,
+        "pct_evaluated": 60.0,
+        "time_sec": 0.11231616899999608,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 178,
+        "accuracy": 0.7196666666666667,
+        "avg_evals": 178.0,
+        "pct_evaluated": 89.0,
+        "time_sec": 0.12069472199999609,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 190,
+        "accuracy": 0.718,
+        "avg_evals": 190.0,
+        "pct_evaluated": 95.0,
+        "time_sec": 0.1213625769999851,
+        "n_eval_samples": 3000
+      }
+    ]
+  },
+  {
+    "dataset": "large_diffuse_signal",
+    "description": "50k samples, 500 features, 200 informative -- diffuse signal",
+    "n_features": 500,
+    "n_classes": 8,
+    "n_train": 35000,
+    "n_test": 15000,
+    "standard": {
+      "accuracy": 0.4544666666666667,
+      "avg_evals": 500.0,
+      "time_sec": 1.9511090089999925,
+      "n_eval_samples": 15000
+    },
+    "adaptive_grid": [
+      {
+        "tau": 0.0,
+        "delta": 3.0,
+        "accuracy": 0.4716666666666667,
+        "avg_evals": 434.7153333333333,
+        "pct_evaluated": 86.94306666666667,
+        "time_sec": 40.485739130999974,
+        "n_eval_samples": 3000
+      },
+      {
+        "tau": 0.0,
+        "delta": 8.0,
+        "accuracy": 0.4713333333333333,
+        "avg_evals": 499.90833333333336,
+        "pct_evaluated": 99.98166666666667,
+        "time_sec": 46.087074290000004,
+        "n_eval_samples": 3000
+      },
+      {
+        "tau": 0.2,
+        "delta": 3.0,
+        "accuracy": 0.14966666666666667,
+        "avg_evals": 500.0,
+        "pct_evaluated": 100.0,
+        "time_sec": 38.19227469400002,
+        "n_eval_samples": 3000
+      },
+      {
+        "tau": 0.2,
+        "delta": 8.0,
+        "accuracy": 0.14966666666666667,
+        "avg_evals": 500.0,
+        "pct_evaluated": 100.0,
+        "time_sec": 38.37607489999999,
+        "n_eval_samples": 3000
+      }
+    ],
+    "static_topk_grid": [
+      {
+        "k": 25,
+        "accuracy": 0.265,
+        "avg_evals": 25.0,
+        "pct_evaluated": 5.0,
+        "time_sec": 1.2606053149999639,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 50,
+        "accuracy": 0.31166666666666665,
+        "avg_evals": 50.0,
+        "pct_evaluated": 10.0,
+        "time_sec": 0.26997172800003,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 125,
+        "accuracy": 0.398,
+        "avg_evals": 125.0,
+        "pct_evaluated": 25.0,
+        "time_sec": 0.26663716600000953,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 250,
+        "accuracy": 0.4686666666666667,
+        "avg_evals": 250.0,
+        "pct_evaluated": 50.0,
+        "time_sec": 0.301387262999981,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 435,
+        "accuracy": 0.47333333333333333,
+        "avg_evals": 435.0,
+        "pct_evaluated": 87.0,
+        "time_sec": 0.36473917199998596,
+        "n_eval_samples": 3000
+      },
+      {
+        "k": 500,
+        "accuracy": 0.4713333333333333,
+        "avg_evals": 500.0,
+        "pct_evaluated": 100.0,
+        "time_sec": 0.3914355740000133,
+        "n_eval_samples": 3000
+      }
+    ]
+  },
+  {
+    "dataset": "highdim_sparse_signal",
+    "description": "15k samples, 2000 features, only 30 informative -- high-dim, sparse signal",
+    "n_features": 2000,
+    "n_classes": 10,
+    "n_train": 10500,
+    "n_test": 4500,
+    "standard": {
+      "accuracy": 0.8411111111111111,
+      "avg_evals": 2000.0,
+      "time_sec": 1.780219489999979,
+      "n_eval_samples": 4500
+    },
+    "adaptive_grid": [
+      {
+        "tau": 0.0,
+        "delta": 5.0,
+        "accuracy": 0.842,
+        "avg_evals": 347.7626666666667,
+        "pct_evaluated": 17.388133333333332,
+        "time_sec": 20.384084561999998,
+        "n_eval_samples": 1500
+      },
+      {
+        "tau": 0.0,
+        "delta": 12.0,
+        "accuracy": 0.84,
+        "avg_evals": 1168.3266666666666,
+        "pct_evaluated": 58.41633333333333,
+        "time_sec": 57.76739686999997,
+        "n_eval_samples": 1500
+      }
+    ],
+    "static_topk_grid": [
+      {
+        "k": 100,
+        "accuracy": 0.868,
+        "avg_evals": 100.0,
+        "pct_evaluated": 5.0,
+        "time_sec": 1.191167830999973,
+        "n_eval_samples": 1500
+      },
+      {
+        "k": 200,
+        "accuracy": 0.864,
+        "avg_evals": 200.0,
+        "pct_evaluated": 10.0,
+        "time_sec": 0.31441233300000704,
+        "n_eval_samples": 1500
+      },
+      {
+        "k": 348,
+        "accuracy": 0.8613333333333333,
+        "avg_evals": 348.0,
+        "pct_evaluated": 17.4,
+        "time_sec": 0.3686241670000072,
+        "n_eval_samples": 1500
+      },
+      {
+        "k": 500,
+        "accuracy": 0.86,
+        "avg_evals": 500.0,
+        "pct_evaluated": 25.0,
+        "time_sec": 0.41426509299998315,
+        "n_eval_samples": 1500
+      },
+      {
+        "k": 1000,
+        "accuracy": 0.856,
+        "avg_evals": 1000.0,
+        "pct_evaluated": 50.0,
+        "time_sec": 0.6043377909999776,
+        "n_eval_samples": 1500
+      },
+      {
+        "k": 1168,
+        "accuracy": 0.8506666666666667,
+        "avg_evals": 1168.0,
+        "pct_evaluated": 58.4,
+        "time_sec": 0.6435264589999861,
+        "n_eval_samples": 1500
+      }
+    ]
+  }
+]

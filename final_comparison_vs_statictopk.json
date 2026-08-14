@@ -1,0 +1,34 @@
+[
+  {
+    "dataset": "breast_cancer",
+    "aewee_accuracy": 0.9122807017543859,
+    "aewee_evals": 3.8596491228070176,
+    "static_topk_accuracy": 0.9181286549707602,
+    "static_topk_k": 4,
+    "winner": "static top-k"
+  },
+  {
+    "dataset": "wine",
+    "aewee_accuracy": 1.0,
+    "aewee_evals": 6.981481481481482,
+    "static_topk_accuracy": 0.9629629629629629,
+    "static_topk_k": 7,
+    "winner": "AEWEE-NB"
+  },
+  {
+    "dataset": "digits",
+    "aewee_accuracy": 0.8444444444444444,
+    "aewee_evals": 12.444444444444445,
+    "static_topk_accuracy": 0.8388888888888889,
+    "static_topk_k": 12,
+    "winner": "AEWEE-NB"
+  },
+  {
+    "dataset": "large_diffuse_signal_subsampled",
+    "aewee_accuracy": 0.3522222222222222,
+    "aewee_evals": 403.29555555555555,
+    "static_topk_accuracy": 0.35555555555555557,
+    "static_topk_k": 403,
+    "winner": "tie"
+  }
+]

@@ -1,0 +1,488 @@
+[
+  {
+    "dataset": "breast_cancer",
+    "n_features": 30,
+    "n_classes": 2,
+    "n_outer_folds": 5,
+    "standard_nested_cv_accuracy": 0.9270569620253164,
+    "selected_tau_pct": 0,
+    "selected_delta_pct": 10,
+    "selection_mode": "certified-safe (nested)",
+    "nested_selection_accuracy": 0.9471835443037975,
+    "nested_selection_std": 0.014851653885588553,
+    "final_tau": 0.0,
+    "final_delta": 5.212,
+    "standard_test_accuracy": 0.935672514619883,
+    "standard_test_evals": 30.0,
+    "final_test_accuracy": 0.9181286549707602,
+    "final_test_evals": 3.543859649122807,
+    "final_test_delta_accuracy": -0.01754385964912275,
+    "final_speedup": 8.465346534653465,
+    "candidate_grid_summary": [
+      {
+        "tau_pct": 0,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.9471835443037975,
+        "nested_std_acc": 0.014851653885588553,
+        "nested_mean_evals": 3.14876582278481
+      },
+      {
+        "tau_pct": 0,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.934620253164557,
+        "nested_std_acc": 0.012562294702696765,
+        "nested_mean_evals": 7.920126582278482
+      },
+      {
+        "tau_pct": 0,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.9295569620253165,
+        "nested_std_acc": 0.019167499732260833,
+        "nested_mean_evals": 15.335981012658229
+      },
+      {
+        "tau_pct": 0,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.9270569620253164,
+        "nested_std_acc": 0.017034607600787337,
+        "nested_mean_evals": 22.423544303797467
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.9471835443037975,
+        "nested_std_acc": 0.014851653885588553,
+        "nested_mean_evals": 3.1512974683544304
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.9371202531645568,
+        "nested_std_acc": 0.01611551992256591,
+        "nested_mean_evals": 7.967689873417721
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.9320569620253163,
+        "nested_std_acc": 0.022239789474265203,
+        "nested_mean_evals": 15.42645569620253
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.9295569620253165,
+        "nested_std_acc": 0.020733862302673375,
+        "nested_mean_evals": 22.48113924050633
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.9496835443037973,
+        "nested_std_acc": 0.014041150295411349,
+        "nested_mean_evals": 3.2903164556962023
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.9371202531645568,
+        "nested_std_acc": 0.011606462957103622,
+        "nested_mean_evals": 8.21382911392405
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.9320569620253163,
+        "nested_std_acc": 0.019225197940714082,
+        "nested_mean_evals": 16.24626582278481
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.9295569620253165,
+        "nested_std_acc": 0.01746118684357451,
+        "nested_mean_evals": 23.144430379746836
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.9371835443037974,
+        "nested_std_acc": 0.011257997566764093,
+        "nested_mean_evals": 5.927848101265822
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.9270886075949367,
+        "nested_std_acc": 0.014844234769110455,
+        "nested_mean_evals": 12.367784810126583
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.9220569620253165,
+        "nested_std_acc": 0.01494146834705234,
+        "nested_mean_evals": 21.49892405063291
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.9195569620253163,
+        "nested_std_acc": 0.013077931277252888,
+        "nested_mean_evals": 23.816930379746836
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.911993670886076,
+        "nested_std_acc": 0.02538527039865098,
+        "nested_mean_evals": 17.825474683544304
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.9144936708860758,
+        "nested_std_acc": 0.024686911487309345,
+        "nested_mean_evals": 22.0703164556962
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.911993670886076,
+        "nested_std_acc": 0.02538527039865098,
+        "nested_mean_evals": 23.363101265822785
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.911993670886076,
+        "nested_std_acc": 0.02538527039865098,
+        "nested_mean_evals": 24.24360759493671
+      }
+    ]
+  },
+  {
+    "dataset": "wine",
+    "n_features": 13,
+    "n_classes": 3,
+    "n_outer_folds": 5,
+    "standard_nested_cv_accuracy": 0.96,
+    "selected_tau_pct": 0,
+    "selected_delta_pct": 50,
+    "selection_mode": "UNCERTIFIED (nested) -- fell back to best available lower bound",
+    "nested_selection_accuracy": 0.96,
+    "nested_selection_std": 0.050596442562694056,
+    "final_tau": 0.0,
+    "final_delta": 11.636,
+    "standard_test_accuracy": 1.0,
+    "standard_test_evals": 13.0,
+    "final_test_accuracy": 1.0,
+    "final_test_evals": 6.981481481481482,
+    "final_test_delta_accuracy": 0.0,
+    "final_speedup": 1.8620689655172413,
+    "candidate_grid_summary": [
+      {
+        "tau_pct": 0,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.8879999999999999,
+        "nested_std_acc": 0.06881860213634101,
+        "nested_mean_evals": 1.9416666666666669
+      },
+      {
+        "tau_pct": 0,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.952,
+        "nested_std_acc": 0.046647615158762396,
+        "nested_mean_evals": 4.152333333333333
+      },
+      {
+        "tau_pct": 0,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.96,
+        "nested_std_acc": 0.050596442562694056,
+        "nested_mean_evals": 7.540333333333332
+      },
+      {
+        "tau_pct": 0,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.96,
+        "nested_std_acc": 0.050596442562694056,
+        "nested_mean_evals": 10.339333333333332
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.8879999999999999,
+        "nested_std_acc": 0.06881860213634101,
+        "nested_mean_evals": 1.9256666666666669
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.952,
+        "nested_std_acc": 0.046647615158762396,
+        "nested_mean_evals": 4.144333333333334
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.96,
+        "nested_std_acc": 0.050596442562694056,
+        "nested_mean_evals": 7.555333333333333
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.96,
+        "nested_std_acc": 0.050596442562694056,
+        "nested_mean_evals": 10.347666666666667
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.8720000000000001,
+        "nested_std_acc": 0.07756287771866126,
+        "nested_mean_evals": 2.0936666666666666
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.9359999999999999,
+        "nested_std_acc": 0.0649923072370877,
+        "nested_mean_evals": 4.362
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.952,
+        "nested_std_acc": 0.058787753826796275,
+        "nested_mean_evals": 7.840333333333332
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.952,
+        "nested_std_acc": 0.058787753826796275,
+        "nested_mean_evals": 10.549
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.8316666666666667,
+        "nested_std_acc": 0.07701370729364423,
+        "nested_mean_evals": 4.449
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.8636666666666667,
+        "nested_std_acc": 0.07375936851983242,
+        "nested_mean_evals": 7.067666666666668
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.8716666666666667,
+        "nested_std_acc": 0.06839428176227731,
+        "nested_mean_evals": 10.485
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.8716666666666667,
+        "nested_std_acc": 0.06839428176227731,
+        "nested_mean_evals": 11.652000000000001
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.7663333333333333,
+        "nested_std_acc": 0.08854628419332142,
+        "nested_mean_evals": 7.526999999999999
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.7663333333333333,
+        "nested_std_acc": 0.08854628419332142,
+        "nested_mean_evals": 10.727666666666668
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.7663333333333333,
+        "nested_std_acc": 0.08854628419332142,
+        "nested_mean_evals": 11.370666666666667
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.7663333333333333,
+        "nested_std_acc": 0.08854628419332142,
+        "nested_mean_evals": 12.526333333333332
+      }
+    ]
+  },
+  {
+    "dataset": "digits",
+    "n_features": 64,
+    "n_classes": 10,
+    "n_outer_folds": 5,
+    "standard_nested_cv_accuracy": 0.7867703788022513,
+    "selected_tau_pct": 0,
+    "selected_delta_pct": 25,
+    "selection_mode": "certified-safe (nested)",
+    "nested_selection_accuracy": 0.8600075886928475,
+    "nested_selection_std": 0.021814782110466422,
+    "final_tau": 0.0,
+    "final_delta": 5.176,
+    "standard_test_accuracy": 0.7722222222222223,
+    "standard_test_evals": 64.0,
+    "final_test_accuracy": 0.8444444444444444,
+    "final_test_evals": 12.422222222222222,
+    "final_test_delta_accuracy": 0.07222222222222219,
+    "final_speedup": 5.152057245080501,
+    "candidate_grid_summary": [
+      {
+        "tau_pct": 0,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.46779232277240246,
+        "nested_std_acc": 0.09000845868012337,
+        "nested_mean_evals": 3.065923607158667
+      },
+      {
+        "tau_pct": 0,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.8600075886928475,
+        "nested_std_acc": 0.021814782110466422,
+        "nested_mean_evals": 12.26113956870929
+      },
+      {
+        "tau_pct": 0,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.8647568456333398,
+        "nested_std_acc": 0.01866723108134706,
+        "nested_mean_evals": 28.696445962183013
+      },
+      {
+        "tau_pct": 0,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.8050654524758111,
+        "nested_std_acc": 0.030802742745157357,
+        "nested_mean_evals": 46.59994308480364
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.46700499588945804,
+        "nested_std_acc": 0.08850354605456963,
+        "nested_mean_evals": 3.0778852842597866
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.8576234743565421,
+        "nested_std_acc": 0.02030779358316506,
+        "nested_mean_evals": 12.498943906912036
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.8575950167583635,
+        "nested_std_acc": 0.017336132406157837,
+        "nested_mean_evals": 29.27971289445393
+      },
+      {
+        "tau_pct": 25,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.7979131094668943,
+        "nested_std_acc": 0.02538327206158399,
+        "nested_mean_evals": 47.16354581673307
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.6992917220008854,
+        "nested_std_acc": 0.01880102109564522,
+        "nested_mean_evals": 6.966337823309935
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.7804338202744578,
+        "nested_std_acc": 0.010674716315564985,
+        "nested_mean_evals": 17.158259027382535
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.7414437488142669,
+        "nested_std_acc": 0.02154857238937159,
+        "nested_mean_evals": 34.921343198634034
+      },
+      {
+        "tau_pct": 50,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.7167488775058496,
+        "nested_std_acc": 0.027406953503755646,
+        "nested_mean_evals": 50.911683425030034
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.6960728514513376,
+        "nested_std_acc": 0.02632658534196018,
+        "nested_mean_evals": 10.344223107569722
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.7756402959590212,
+        "nested_std_acc": 0.01643239448987385,
+        "nested_mean_evals": 26.569145639663567
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.7700531208499337,
+        "nested_std_acc": 0.03478586003839772,
+        "nested_mean_evals": 45.115623221400114
+      },
+      {
+        "tau_pct": 75,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.7597103648896478,
+        "nested_std_acc": 0.038350384469617756,
+        "nested_mean_evals": 56.586792512489716
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 10,
+        "nested_mean_acc": 0.6244893442104597,
+        "nested_std_acc": 0.025134789431770294,
+        "nested_mean_evals": 34.243764624043514
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 25,
+        "nested_mean_acc": 0.6483779169038132,
+        "nested_std_acc": 0.018038356420631115,
+        "nested_mean_evals": 51.44280338961613
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 50,
+        "nested_mean_acc": 0.649171567697464,
+        "nested_std_acc": 0.014340830902630771,
+        "nested_mean_evals": 58.38215076203123
+      },
+      {
+        "tau_pct": 90,
+        "delta_pct": 75,
+        "nested_mean_acc": 0.6467811294504521,
+        "nested_std_acc": 0.013048782544187376,
+        "nested_mean_evals": 62.11636628090811
+      }
+    ]
+  }
+]
